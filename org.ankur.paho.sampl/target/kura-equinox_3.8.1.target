@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Kura Target Platform Equinox 3.8.1" sequenceNumber="97">
+<locations>
+<location path="${workspace_loc}/target-definition/equinox_3.8.1/repository/plugins" type="Profile"/>
+<location path="${workspace_loc}/target-definition/common/repository/plugins" type="Profile"/>
+<location path="C:\eclipse\kura\workspace\target-definition\camel" type="Directory"/>
+</locations>
+<includeBundles>
+<plugin id="com.codeminders.hidapi"/>
+<plugin id="com.google.protobuf"/>
+<plugin id="com.gwt.user"/>
+<plugin id="javax.servlet"/>
+<plugin id="jdk.dio"/>
+<plugin id="log4j"/>
+<plugin id="log4j.apache-log4j-extras"/>
+<plugin id="org.apache.camel.camel-core"/>
+<plugin id="org.apache.camel.camel-core-osgi"/>
+<plugin id="org.apache.camel.camel-jms"/>
+<plugin id="org.apache.camel.camel-kura"/>
+<plugin id="org.apache.camel.camel-paho"/>
+<plugin id="org.apache.camel.camel-spring"/>
+<plugin id="org.apache.commons.fileupload"/>
+<plugin id="org.apache.commons.io"/>
+<plugin id="org.apache.commons.lang3"/>
+<plugin id="org.apache.commons.net"/>
+<plugin id="org.apache.felix.dependencymanager"/>
+<plugin id="org.apache.felix.deploymentadmin"/>
+<plugin id="org.apache.felix.gogo.command"/>
+<plugin id="org.apache.felix.gogo.runtime"/>
+<plugin id="org.apache.felix.gogo.shell"/>
+<plugin id="org.eclipse.core.contenttype"/>
+<plugin id="org.eclipse.core.jobs"/>
+<plugin id="org.eclipse.core.runtime"/>
+<plugin id="org.eclipse.equinox.app"/>
+<plugin id="org.eclipse.equinox.cm"/>
+<plugin id="org.eclipse.equinox.common"/>
+<plugin id="org.eclipse.equinox.console"/>
+<plugin id="org.eclipse.equinox.ds"/>
+<plugin id="org.eclipse.equinox.event"/>
+<plugin id="org.eclipse.equinox.http.jetty"/>
+<plugin id="org.eclipse.equinox.http.registry"/>
+<plugin id="org.eclipse.equinox.http.servlet"/>
+<plugin id="org.eclipse.equinox.io"/>
+<plugin id="org.eclipse.equinox.launcher"/>
+<plugin id="org.eclipse.equinox.metatype"/>
+<plugin id="org.eclipse.equinox.preferences"/>
+<plugin id="org.eclipse.equinox.registry"/>
+<plugin id="org.eclipse.equinox.util"/>
+<plugin id="org.eclipse.jetty.continuation"/>
+<plugin id="org.eclipse.jetty.http"/>
+<plugin id="org.eclipse.jetty.io"/>
+<plugin id="org.eclipse.jetty.security"/>
+<plugin id="org.eclipse.jetty.server"/>
+<plugin id="org.eclipse.jetty.servlet"/>
+<plugin id="org.eclipse.jetty.util"/>
+<plugin id="org.eclipse.kura.core"/>
+<plugin id="org.eclipse.kura.core.certificates"/>
+<plugin id="org.eclipse.kura.core.cloud"/>
+<plugin id="org.eclipse.kura.core.comm"/>
+<plugin id="org.eclipse.kura.core.configuration"/>
+<plugin id="org.eclipse.kura.core.crypto"/>
+<plugin id="org.eclipse.kura.core.net"/>
+<plugin id="org.eclipse.kura.deployment.agent"/>
+<plugin id="org.eclipse.kura.emulator.gpio"/>
+<plugin id="org.eclipse.kura.linux.status"/>
+<plugin id="org.eclipse.kura.web"/>
+<plugin id="org.eclipse.osgi"/>
+<plugin id="org.eclipse.osgi.services"/>
+<plugin id="org.eclipse.osgi.util"/>
+<plugin id="org.eclipse.paho.client.mqttv3"/>
+<plugin id="org.eclipse.soda.dk.comm"/>
+<plugin id="org.hamcrest.core"/>
+<plugin id="org.hsqldb.hsqldb"/>
+<plugin id="org.json"/>
+<plugin id="org.junit"/>
+<plugin id="org.knowhowlab.osgi.monitoradmin"/>
+<plugin id="org.tigris.mtoolkit.iagent.rpc"/>
+<plugin id="org.usb4java"/>
+<plugin id="osgi.cmpn"/>
+<plugin id="slf4j.api"/>
+<plugin id="slf4j.jdk14"/>
+<plugin id="slf4j.log4j12"/>
+<plugin id="usb4java-javax"/>
+</includeBundles>
+</target>

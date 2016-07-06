@@ -1,5 +1,4 @@
 package org.ankur.paho.sampl.publish;
-import org.ankur.paho.sampl.Activator;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
@@ -18,9 +17,9 @@ public class MqttPublish {
         int qos             = 2;
 
         try {
-        	MqttClient client = getClient();
+        	MqttClient client = new MqttClient("tcp://localhost:1883", "Pub");
         	
-            String content = String.valueOf(LightSensor.readLDR());
+            String content = String.valueOf(12); //LightSensor.readLDR());
             
 			System.out.println("Publishing message: "+content);
             MqttMessage message = new MqttMessage(content.getBytes());

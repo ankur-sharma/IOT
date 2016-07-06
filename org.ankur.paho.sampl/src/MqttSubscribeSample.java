@@ -11,14 +11,17 @@ public class MqttSubscribeSample implements MqttCallback {
 	public static void main(String[] args) throws InterruptedException {
 		MqttSubscribeSample demo = new MqttSubscribeSample();
 		demo.demo();
+		while(true) {
+			Thread.sleep(1000);
+		}
 	}
     public void demo() throws InterruptedException {
 
         String topic        = "MQTTSample";
         String content      = "Message from MqttPublishSample" + System.currentTimeMillis();
         int qos             = 2;
-        String broker       = "tcp://localhost:1883";
-        String clientId     = "JavaSample";
+        String broker       = "tcp://192.168.0.102:1883";
+        String clientId     = "TRUCKER";
         MemoryPersistence persistence = new MemoryPersistence();
 
         try {
@@ -37,11 +40,11 @@ public class MqttSubscribeSample implements MqttCallback {
             MqttMessage message = new MqttMessage(content.getBytes());
             message.setQos(qos);
             sampleClient.subscribe(topic);
-            sampleClient.publish(topic, message);
-            System.out.println("Message published");
-            sampleClient.disconnect();
-            System.out.println("Disconnected");
-            System.exit(0);
+//            sampleClient.publish(topic, message);
+//            System.out.println("Message published");
+//            sampleClient.disconnect();
+//            System.out.println("Disconnected");
+//            System.exit(0);
         } catch(MqttException me) {
             System.out.println("reason "+me.getReasonCode());
             System.out.println("msg "+me.getMessage());

@@ -1,20 +1,24 @@
 package org.ankur.paho.sampl;
 
-import org.ankur.paho.sampl.publish.LightSensor;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.component.kura.KuraRouter;
 import org.apache.camel.component.paho.PahoComponent;
-import org.eclipse.kura.message.KuraPayload;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.osgi.framework.BundleContext;
 
 public class Activator extends KuraRouter {
 
-	private static final String BROKER_URL = "tcp://192.168.0.103:1883";
-	private static final String CLIENT_ID = "JavaSample";
-	private static final String TOPIC = "LDR";
+	private static final String MQTT_SERVER = "192.168.0.102";
+	private static final String BROKER_URL = "tcp://" + MQTT_SERVER + ":1883";
+	private static final String CLIENT_ID = "Edison";
+	private static final String TOPIC = "TRUCKER";
 	private PahoComponent pahoComponent;
 
 	@Override
@@ -47,16 +51,54 @@ public class Activator extends KuraRouter {
 
 			@Override
 			public void process(Exchange exchange) throws Exception {
-				String message = String.valueOf(LightSensor.readLDR());
+//				String message = String.valueOf(LightSensor.readLDR());
+				String message = getNFC();
 				write("sending message:" + message);
 				exchange.getIn().setBody(message.getBytes(), byte[].class);
 			}
 
-		}).to(pahoComponent.createEndpoint("paho:"+TOPIC));
+		}).filter().method(new MessageFilter(), "filter").to(pahoComponent.createEndpoint("paho:"+TOPIC));
+	}
+	
+	public class MessageFilter {
+		
+		public MessageFilter() {
+			System.out.println("Filter created");
+		}
+		
+		public boolean filter(Exchange exchange) {
+			Object object = exchange.getIn().getBody();
+			byte[] message = (byte[])(object);
+			System.out.println("Filter object " + message.length );
+			if (message.length > 0)
+				return true;
+			return false;
+		}
+	}
+	
+	private String getNFC() {
+		try {
+			URL url = new URL("http://localhost:83");
+			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+			String data = "";
+			String nfc = null;
+			while (true) {
+				data = br.readLine();
+				if (data == null)
+					break;
+				write(data);
+				if (data.length() > 0)
+					nfc = data.trim();
+			}
+			return nfc;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "";
 	}
 
 	protected void write(Object obj) {
-		String string = "ankur1: " + obj;
+		String string = "[org.ankur.paho.sampl] " + obj;
 		log.debug(string);
 		System.out.println(string);
 	}

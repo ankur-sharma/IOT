@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/activemq-broker-5.13.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/activemq-client-5.13.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jmxri.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jndi.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/activemq-pool-5.13.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jmsdemo
+Bundle-SymbolicName: org.ankur.kura.jmsdemo
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.ankur.kura.jmsdemo.Activator
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.apache.activemq;bundle-version="1.0.0",
+ org.apache.camel.camel-kura,
+ org.eclipse.osgi;bundle-version="3.8.1",
+ org.apache.camel.camel-core;bundle-version="2.16.3",
+ org.apache.camel.camel-jms;bundle-version="2.16.3",
+ org.springframework.context;bundle-version="3.2.5",
+ org.apache.geronimo.specs.geronimo-jms_1.1_spec;bundle-version="1.1.1",
+ org.fusesource.hawtbuf.hawtbuf;bundle-version="1.11.0",
+ org.apache.httpcomponents.httpclient,
+ org.apache.httpcomponents.httpcore

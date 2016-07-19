@@ -1,0 +1,27 @@
+#Deployment Plugin Project File
+#Thu Jul 14 14:23:21 IST 2016
+build.ant.name=<.>\\package\\jmsdemo_build.xml
+build.dp.file=<.>\\package\\jmsdemo.dp
+build.location=
+bundles.0.bundle_path=<.>\\.project
+bundles.0.customizer=false
+bundles.0.headers.count=0
+bundles.0.missing=false
+bundles.0.name=bundles/org.apache.activemq.jar
+bundles.0.symbolic_name=org.apache.activemq
+bundles.0.version=1.0.0.qualifier
+bundles.1.bundle_path=C\:\\eclipse\\kura\\workspace\\org.ankur.kura.jmsdemo\\.project
+bundles.1.customizer=false
+bundles.1.headers.count=0
+bundles.1.missing=false
+bundles.1.name=bundles/org.ankur.kura.jmsdemo.jar
+bundles.1.symbolic_name=org.ankur.kura.jmsdemo
+bundles.1.version=1.0.0.qualifier
+bundles.count=2
+certificates.count=0
+general.signbundles=false
+headers.other.headers=
+headers.symbolic.name=jmsdemo
+headers.version=1.0.0
+resources.count=0
+

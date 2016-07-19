@@ -8,10 +8,10 @@ public class MqttPublishSample {
 
     public static void main(String[] args) {
 
-        String topic        = "MQTTSample";
-        String content      = "Message from MqttPublishSample";
+        String topic        = "TRUCKER";
+        String content      = "truckerid=12";
         int qos             = 2;
-        String broker       = "tcp://192.168.0.103:1883";
+        String broker       = "tcp://demo-local:1883";
         String clientId     = "JavaSample";
         MemoryPersistence persistence = new MemoryPersistence();
 
@@ -25,7 +25,7 @@ public class MqttPublishSample {
             System.out.println("Publishing message: "+content);
             MqttMessage message = new MqttMessage(content.getBytes());
             message.setQos(qos);
-            sampleClient.subscribe(topic);
+//            sampleClient.subscribe(topic);
             sampleClient.publish(topic, message);
             System.out.println("Message published");
             sampleClient.disconnect();

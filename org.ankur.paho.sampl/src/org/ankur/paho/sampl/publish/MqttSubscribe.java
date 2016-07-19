@@ -28,7 +28,7 @@ public class MqttSubscribe implements MqttCallback {
         System.out.println("Connected");
         
 		client.setCallback(sub);
-		client.subscribe(new String[] {"ActiveMQ.Advisory.Producer.Topic.temp", "temp", topic});
+		client.subscribe(new String[] {"ActiveMQ.Advisory.Producer.Topic.TRUCKER", topic});
 
 		
 		while(true) {
